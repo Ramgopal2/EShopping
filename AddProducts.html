@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffbcc; /* Light yellow background */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #555;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #ffcc00; /* Yellow button */
+            border: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            padding: 10px 20px;
+            display: block;
+            margin: auto;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #ffdd33;
+        }
+    </style>
+    <script>
+        function updateOptions() {
+            // Get the selected category
+            const category = document.getElementById("category").value;
+
+            // Get the Brand dropdown
+            const brandDropdown = document.getElementById("brand");
+
+            // Clear existing options
+            brandDropdown.innerHTML = "";
+
+            // Define brand options for each category
+            const brands = {
+                Electronics: ["Sony", "Samsung", "LG", "Panasonic"],
+                Mobile: ["Apple", "Xiaomi", "OnePlus", "Realme"],
+                MEN: ["Nike", "Adidas", "Puma", "Levi's"],
+                WOMEN: ["Zara", "H&M", "Gucci", "Forever21"]
+            };
+
+            if (brands[category]) {
+                // Add a default "SELECT" option
+                const defaultOption = document.createElement("option");
+                defaultOption.textContent = "SELECT";
+                defaultOption.value = "";
+                brandDropdown.appendChild(defaultOption);
+
+                // Populate brands for the selected category
+                brands[category].forEach(brand => {
+                    const option = document.createElement("option");
+                    option.textContent = brand;
+                    option.value = brand;
+                    brandDropdown.appendChild(option);
+                });
+            } else {
+                // Add a default "SELECT" option if no category is selected
+                const defaultOption = document.createElement("option");
+                defaultOption.textContent = "SELECT";
+                defaultOption.value = "";
+                brandDropdown.appendChild(defaultOption);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Product Details</h1>
+        <form action="/E_Shopping_By_Using_Servlets_And_JDBC/addingproducts">
+            <label for="category">Category</label>
+            <select id="category" name="category" onchange="updateOptions()">
+                <option value="">SELECT</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Mobile">Mobile</option>
+                <option value="MEN">Men</option>
+                <option value="WOMEN">Women</option>
+            </select>
+
+            <label for="brand">Brand</label>
+            <select id="brand" name="brand">
+                <option value="">SELECT</option>
+            </select>
+
+            <label for="productname">Product Name</label>
+            <input type="text" id="productname" name="productname" placeholder="Enter Product Name" required>
+
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" placeholder="Enter Product Price" min="0" required>
+
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter Product Quantity" min="1" required>
+
+            <label for="discount">Discount (%)</label>
+            <input type="number" id="discount" name="discount" placeholder="Enter Product Discount" min="0" max="100">
+
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+</body>
+</html>

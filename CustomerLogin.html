@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .form-container h1 {
+            color: #6a11cb;
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #6a11cb;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #2575fc;
+        }
+
+        .form-container input::placeholder {
+            color: #999999;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Login</h1>
+        <form action="/E_Shopping_By_Using_Servlets_And_JDBC/customerlogin">
+            <input type="text" placeholder="Enter your mail ID" name="emailid" required>
+            <input type="password" placeholder="Enter your password" name="password" required>
+            <input type="submit" value="Login">
+            <br> 
+            <a href="CustomerRegistration.html">Don't have a Account?</a>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- Own code -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/E_Shopping_By_Using_Servlets_And_JDBC/customerlogin">
+<input placeholder="enter your mail id" name="emailid">
+<br>
+<input placeholder="enter your password" name="password">
+<br>
+<input type="submit">
+</form>
+</body>
+</html>
+-->

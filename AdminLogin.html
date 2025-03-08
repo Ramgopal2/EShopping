@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        background-color: yellow;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-box {
+        background-color: green;
+        padding: 30px;
+        border-radius: 8px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: white;
+        text-align: center;
+    }
+    .login-box h1 {
+        margin-bottom: 20px;
+    }
+    .login-box input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        box-sizing: border-box;
+    }
+    .login-box input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    .login-box input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="login-box">
+        <form action="AdminLogin">
+            <h1>Admin Login</h1>
+            <input type="email" placeholder="Enter the Admin email" name="emailid" required><br>
+            <input type="password" placeholder="Enter the Admin password" name="password" required><br>
+            <input type="submit" value="Login"><br>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

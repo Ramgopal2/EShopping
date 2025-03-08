@@ -1,0 +1,136 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            color: #333333;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff7e5f;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"],
+        .form-container input[type="tel"],
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #ff7e5f;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #feb47b;
+        }
+
+        .form-container input::placeholder {
+            color: #aaaaaa;
+        }
+
+        .form-container .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Customer Registration</h1>
+        <form action="/E_Shopping_By_Using_Servlets_And_JDBC/customerregistation">
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Name" name="name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Enter Your Email ID" name="emailid" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Enter Your Password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Enter Your Mobile No" name="mobileno" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Address" name="address" required>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+<!-- the below code is done by my own -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/E_Shopping_By_Using_Servlets_And_JDBC/customerregistation">
+<input placeholder="Enter Your Name " name="name">
+<br>
+<input placeholder="Enter Your Emailid" name="emailid">
+<br>
+<input placeholder="Enter Your password" name="password">
+<br>
+<input placeholder="Enter Your mobile no" name="mobileno">
+<br>
+<input placeholder="Enter Your Gender" name="gender">
+<br>
+<input placeholder="Enter Your Addrerss" name="address">
+<br>
+<input type="submit">
+
+</form>
+</body>
+</html>
+
+ -->
