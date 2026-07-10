@@ -1,12 +1,4 @@
 pipeline {
-<<<<<<< HEAD
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out source code'
-=======
 
     agent any
 
@@ -15,21 +7,12 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out EShopping source code'
->>>>>>> 2f91183 (Add Dockerfile and Jenkinsfile)
                 checkout scm
             }
         }
 
         stage('Build') {
             steps {
-<<<<<<< HEAD
-                echo 'Build started'
-                sh 'echo Hello from Jenkins'
-                sh 'date'
-            }
-        }
-    }
-=======
                 echo 'Building Java application'
                 sh 'mvn clean package'
             }
@@ -45,25 +28,17 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo 'Creating Docker image'
-
-                sh '''
-                docker build -t eshopping-app .
-                '''
+                sh 'docker build -t eshopping-app .'
             }
         }
 
         stage('Docker Run') {
             steps {
                 echo 'Running application container'
-
                 sh '''
                 docker stop eshopping-container || true
                 docker rm eshopping-container || true
-
-                docker run -d \
-                --name eshopping-container \
-                -p 8080:8080 \
-                eshopping-app
+                docker run -d --name eshopping-container -p 8080:8080 eshopping-app
                 '''
             }
         }
@@ -78,5 +53,4 @@ pipeline {
             echo 'Pipeline failed'
         }
     }
->>>>>>> 2f91183 (Add Dockerfile and Jenkinsfile)
 }
